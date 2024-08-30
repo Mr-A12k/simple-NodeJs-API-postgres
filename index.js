@@ -9,6 +9,8 @@ app.use('/api/user',userRouter);
 app.use('/api/getUsers',userRouter);
 app.use('/api',userRouter);
 app.use('/api',userRouter);
+app.use('/api',userRouter);
+
 
 app.post('/test',(req,res)=>{
     res.status(200).json({message:"App pass the test!"});
