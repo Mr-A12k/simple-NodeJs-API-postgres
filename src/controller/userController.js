@@ -2,6 +2,7 @@
 const prisma = require('../database');
 const { param } = require('../routes/userRouter');
 
+//create a new user
 exports.createUser= async (req,res)=>{
     try {
         const existingUser = await prisma.user.findUnique({
@@ -21,6 +22,8 @@ exports.createUser= async (req,res)=>{
     }
 }
 
+
+//get all the existing users
 exports.getAllUsers= async (req,res)=>{
     try {
         const users =await prisma.user.findMany();
@@ -32,7 +35,7 @@ exports.getAllUsers= async (req,res)=>{
     }
 }
 
-
+//get the specific user with ID
 exports.getUserWithId= async (req,res)=>{
     console.log("hello");
     const {id}= req.params;
@@ -53,6 +56,8 @@ exports.getUserWithId= async (req,res)=>{
 
 }
 
+
+//delete an user with id
 exports.deleteUser= async (req,res)=>{
     const {id}= req.params;
     
@@ -83,7 +88,7 @@ exports.deleteUser= async (req,res)=>{
         
 }
 
-
+//edit user details with id
 exports.editUser =async (req,res)=>{
     const {id} = req.params;
     const updateData = req.body;
