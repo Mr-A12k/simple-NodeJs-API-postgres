@@ -116,3 +116,5 @@ exports.editUser =async (req,res)=>{
         return res.status(500).json({message:"Error while update the user details!"});
     }
 }
+
+//completed
